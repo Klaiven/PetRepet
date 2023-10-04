@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Repet</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+            h1{
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        figure{
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        figure img{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            object-fit: cover;
+        }
+        nav{
+            margin-top: 50px;
+            font-size: 3rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .clicavel{
+            cursor: pointer;
+        }
+
+        .morto{
+           opacity: 0.5; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pet e Repet</h1>
+
+    <main id="conteudo">
+
+    </main>
+
+</body>
+
+<script>
+    const main = document.getElementById('conteudo');
+
+    const pt1 = `
+    <h2>Tinha dois cachorros: O Pet e o Repet</h2>
+
+    <section>
+        <figure>
+            <h3>Pet</h3>
+            <img src="https://img.freepik.com/fotos-gratis/cao-pug-isolado-em-um-fundo-branco_2829-11416.jpg?w=826&t=st=1696442541~exp=1696443141~hmac=1430a5e456273b0eabb9b549c036f734a4735953c14329e9bf407a4d3ab8564e" alt="PET">
+        </figure>
+
+        <figure>
+            <h3>Repet</h3>
+            <img src="https://img.freepik.com/fotos-gratis/jovem-bulldog-frances-marrom-brincando-isolado-na-parede-branca-do-estudio_155003-31898.jpg?w=1380&t=st=1696442563~exp=1696443163~hmac=e2546cff06d6e3e8f62b75bd4cd3feaa960e14a6903ba8b07e7e951a3020ed99" alt="REPET">
+        </figure>
+    </section>
+    <nav onclick="passagem1()">
+        <ion-icon name="chevron-down-circle-outline"></ion-icon>
+    </nav>
+    `
+    main.innerHTML = pt1;
+
+    function passagem1(){
+        const pt2 = `
+        <h2>O Pet morreu: Quem Sobrou?</h2>
+
+        <section>
+
+            <figure onclick="nao()" class="clicavel morto">
+                <h3>Pet</h3>
+                <img src="https://img.freepik.com/fotos-gratis/cao-pug-isolado-em-um-fundo-branco_2829-11416.jpg?w=826&t=st=1696442541~exp=1696443141~hmac=1430a5e456273b0eabb9b549c036f734a4735953c14329e9bf407a4d3ab8564e" alt="PET">
+            </figure>
+
+            <figure onclick="repet()" class="clicavel" >
+                <h3>Repet</h3>
+                <img src="https://img.freepik.com/fotos-gratis/jovem-bulldog-frances-marrom-brincando-isolado-na-parede-branca-do-estudio_155003-31898.jpg?w=1380&t=st=1696442563~exp=1696443163~hmac=e2546cff06d6e3e8f62b75bd4cd3feaa960e14a6903ba8b07e7e951a3020ed99" alt="REPET">
+            </figure>
+
+            
+        </section>
+        `
+        main.innerHTML = pt2;
+
+    }
+    
+    function repet(){
+        main.innerHTML = pt1;
+    }
+    function nao(){
+        alert("NÃO")
+    }
+</script>
+</html>
